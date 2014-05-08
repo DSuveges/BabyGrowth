@@ -3,6 +3,12 @@ BabyGrowth
 
 An R function to plot weight gain of baby boys in context of the WHO percentiles
 
+___version: 1.2 Last modified: 2014.05.07 Daniel Suveges___
+* Now support both boy and girl weight gain chart
+* Girl chart is pink, boy's is blue. Later I'll make it optional
+* Even more customizable plot details
+* Legend added, with the last day of measurement
+
 ___version: 1.0 Last modified: 2014.05.05 Daniel Suveges___
 * Supports custom date format
 * Axis labels can be changed
@@ -10,9 +16,7 @@ ___version: 1.0 Last modified: 2014.05.05 Daniel Suveges___
 * Multiple weight units are supported: g, kg, lb
 
 ___ToDo list for further versions:___
-* Support both girl and boy data
 * Support all available measures: weight, length, head circumference
-* More customizable plot labels
 * Plot become optional, just a calculator to get baby percentile.
 * More rubust error hangling
 * customizable units on the chart (eg. lb-s instead of kg)
@@ -39,6 +43,12 @@ BabyGrowth(x,y,name="Baby",unit="kg",dateformat="%B-%d",xtitle="Month",ytitle="W
   
   ___filename___ - Output filename
   
+  ___sex___ - gender of the baby
+  
+  ___main___ - the title of the chart, the text following the baby's name
+  
+  ___legend__ - customizable legend
+  
 ___Sample input:___
 
 Date values: 
@@ -50,6 +60,6 @@ Measured values:
 y <- c(3288.5, 2976.7, 3203.5, 3203.5, 3458.6, 3685.4, 4025.6, 4110.7, 4280.8)
 ```
 
-___Sample output:___
+___Sample output (Not yet updated to ver.1.2):___
 
 ![BabyGrowth(aron$Date, aron$Gramm, unit="kg", dateformat="%B-%d", name="Áron", xtitle="Month", ytitle="Weight (kg)")](http://kepfeltoltes.hu/140505/Growchart_www.kepfeltoltes.hu_.png)
