@@ -23,7 +23,7 @@ ___ToDo list for further versions:___
 
 ___Usage, parameters:___
 ```
-BabyGrowth(x,y,name="Baby",unit="kg",dateformat="%B-%d",xtitle="Month",ytitle="Weight(kg)", filename="Growchart.png")
+BabyGrowth(x,y,name="Baby",sex="boy",unit="kg",dateformat="%B-%d",xtitle="Month",ytitle="Weight(kg)", filename="Growchart.png", main="'s growchart", legend=c("50% percentile","Baby growth","Last measaured:"))
 ```
 * Parameters:
 
@@ -47,7 +47,7 @@ BabyGrowth(x,y,name="Baby",unit="kg",dateformat="%B-%d",xtitle="Month",ytitle="W
   
   ___main___ - the title of the chart, the text following the baby's name
   
-  ___legend__ - customizable legend
+  ___legend___ - customizable legend
   
 ___Sample input:___
 
@@ -60,6 +60,6 @@ Measured values:
 y <- c(3288.5, 2976.7, 3203.5, 3203.5, 3458.6, 3685.4, 4025.6, 4110.7, 4280.8)
 ```
 
-___Sample output (Not yet updated to ver.1.2):___
+___Sample output:___
 
-![BabyGrowth(aron$Date, aron$Gramm, unit="kg", dateformat="%B-%d", name="Áron", xtitle="Month", ytitle="Weight (kg)")](http://kepfeltoltes.hu/140505/Growchart_www.kepfeltoltes.hu_.png)
+![BabyGrowth(aron$Date, aron$Gramm, unit="kg", dateformat="%B-%d", name="Áron", xtitle="Month", ytitle="Weight (kg)")](http://kepfeltoltes.hu/140510/Growchart_www.kepfeltoltes.hu_.png)
