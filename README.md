@@ -3,7 +3,6 @@ BabyGrowth
 
 An R function to plot weight gain of babies in context of the WHO percentiles
 
-<<<<<<< HEAD
 ___version: 1.2 Last modified: 2014.05.07 Daniel Suveges___
 * Now supports both boy and girl weight gain charts
 * Girl chart is pink, boy is blue. Later I'll make it optional
