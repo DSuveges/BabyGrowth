@@ -25,14 +25,16 @@ ___ToDo list for further versions:___
 * More rubust error handling
 * Customizable units on the chart (e.g. lb-s instead of kg)
 
-___Usage, parameters:___
-```
+### Usage, parameters:
+
+```R
 BabyGrowth(x,y,name="Baby",sex="boy",unit="kg",
     dateformat="%B-%d",xtitle="Month",ytitle="Weight(kg)",
     filename="Growchart.png", main="'s growchart",
     legend=c("50% percentile","Baby growth","Last measaured:"))
 ```
-* Parameters:
+
+__Parameters:__
 
    __x__ - Dates when the baby was measured, assuming that the first date is the date of birth
 
@@ -86,7 +88,8 @@ df[1:12,]
 # 12 2014-03-06    10  1 4564.273
 
 # Calling plotter:
-BabyGrowth(df$Date, df$Gramms, unit="g", dateformat="%Y-%m-%d", name="Aron", xtitle="Month", ytitle="Weight (kg)")
+BabyGrowth(df$Date, df$Gramms, unit="g", dateformat="%Y-%m-%d",
+    name="Aron", xtitle="Month", ytitle="Weight (kg)")
 
 ```
 
