@@ -27,7 +27,10 @@ ___ToDo list for further versions:___
 
 ___Usage, parameters:___
 ```
-BabyGrowth(x,y,name="Baby",sex="boy",unit="kg",dateformat="%B-%d",xtitle="Month",ytitle="Weight(kg)", filename="Growchart.png", main="'s growchart", legend=c("50% percentile","Baby growth","Last measaured:"))
+BabyGrowth(x,y,name="Baby",sex="boy",unit="kg",
+    dateformat="%B-%d",xtitle="Month",ytitle="Weight(kg)",
+    filename="Growchart.png", main="'s growchart",
+    legend=c("50% percentile","Baby growth","Last measaured:"))
 ```
 * Parameters:
 
@@ -39,7 +42,7 @@ BabyGrowth(x,y,name="Baby",sex="boy",unit="kg",dateformat="%B-%d",xtitle="Month"
    
    ___unit___ - Unit of the measured value. Supported units: g, kg, lb
    
-   ___dateformat___ - Standard date format is supported
+   ___dateformat___ - Based on the standard (strftime)[https://stat.ethz.ch/R-manual/R-devel/library/base/html/strptime.html] formats.
    
    ___xtitle___ - Title of the x axis
 
@@ -53,17 +56,15 @@ BabyGrowth(x,y,name="Baby",sex="boy",unit="kg",dateformat="%B-%d",xtitle="Month"
   
   ___legend___ - Customizable legend
   
-___Sample input:___
+### Example:
 
-Date values: 
-```
-x <- c("Jan-28", "Feb-1", "Feb-3", "Feb-10", "Feb-13", "Feb-19", "Feb-23", "Feb-25", "Feb-27")
-```
-Measured values: 
-```
-y <- c(3288.5, 2976.7, 3203.5, 3203.5, 3458.6, 3685.4, 4025.6, 4110.7, 4280.8)
+```R
+
+measure_date <- c("Jan-28", "Feb-1", "Feb-3", "Feb-10", "Feb-13", "Feb-19", "Feb-23", "Feb-25", "Feb-27") # Date of measurements
+measure_height <- c(3288.5, 2976.7, 3203.5, 3203.5, 3458.6, 3685.4, 4025.6, 4110.7, 4280.8) # Measured values.
+# Calling the plotter
+BabyGrowth(measure_date, measure_height, unit="g", dateformat="%B-%d", name="Aron", xtitle="Month", ytitle="Weight (kg)") 
+
 ```
 
-___Sample output:___
-
-![BabyGrowth(aron$Date, aron$Gramm, unit="kg", dateformat="%B-%d", name="Áron", xtitle="Month", ytitle="Weight (kg)")](http://kepfeltoltes.hu/140510/Growchart_www.kepfeltoltes.hu_.png)
+### Sample output:
