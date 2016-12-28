@@ -59,12 +59,74 @@ BabyGrowth(x,y,name="Baby",sex="boy",unit="kg",
 ### Example:
 
 ```R
+# Reading function:
+source("BabyGrowth.R")
 
-measure_date <- c("Jan-28", "Feb-1", "Feb-3", "Feb-10", "Feb-13", "Feb-19", "Feb-23", "Feb-25", "Feb-27") # Date of measurements
-measure_height <- c(3288.5, 2976.7, 3203.5, 3203.5, 3458.6, 3685.4, 4025.6, 4110.7, 4280.8) # Measured values.
-# Calling the plotter
-BabyGrowth(measure_date, measure_height, unit="g", dateformat="%B-%d", name="Aron", xtitle="Month", ytitle="Weight (kg)") 
+# Reading sample data from a tsv file:
+df = read.table("sample_input.tsv", sep="\t", header=T)
+
+# Adjusting measured weight:
+df$Gramms = as.numeric(df$Gramms)
+
+# Look at the header:
+df[1:12,]
+
+#         Date Pound Oz   Gramms
+# 1  2014-01-28     7  4 3288.545
+# 2  2014-02-01     6  9 2976.700
+# 3  2014-02-03     7  1 3203.496
+# 4  2014-02-10     7  1 3203.496
+# 5  2014-02-13     7 10 3458.642
+# 6  2014-02-19     8  2 3685.438
+# 7  2014-02-23     8 14 4025.632
+# 8  2014-02-25     9  1 4110.681
+# 9  2014-02-27     9  7 4280.778
+# 10 2014-03-02     9 12 4422.526
+# 11 2014-03-03     9 14 4479.225
+# 12 2014-03-06    10  1 4564.273
+
+# Calling plotter:
+BabyGrowth(df$Date, df$Gramms, unit="g", dateformat="%Y-%m-%d", name="Aron", xtitle="Month", ytitle="Weight (kg)")
 
 ```
 
 ### Sample output:
+
+
+x = c("2014-01-28", 
+"2014-02-01", 
+"2014-02-03", 
+"2014-02-10", 
+"2014-02-13", 
+"2014-02-19", 
+"2014-02-23", 
+"2014-02-25", 
+"2014-02-27", 
+"2014-03-02", 
+"2014-03-03", 
+"2014-03-06", 
+"2014-03-07", 
+"2014-03-09", 
+"2014-03-12", 
+"2014-03-14", 
+"2014-03-16", 
+"2014-03-18", 
+"2014-03-20", 
+"2014-03-22", 
+"2014-03-24", 
+"2014-03-26", 
+"2014-03-28", 
+"2014-03-30", 
+"2014-04-01", 
+"2014-04-07", 
+"2014-04-09", 
+"2014-04-11", 
+"2014-04-13", 
+"2014-04-15", 
+"2014-04-17", 
+"2014-04-19", 
+"2014-04-21", 
+"2014-04-23", 
+"2014-04-25", 
+"2014-04-27", 
+"2014-04-29")
