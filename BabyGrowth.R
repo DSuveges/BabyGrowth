@@ -21,7 +21,7 @@
     # more robust error handling
 
 # Usage, parameters:
-#BabyGrowth(x,y,name="Baby",unit="kg",dateformat="%B-%d",xtitle="Month",ytitle="Weight(kg)", filename="Growchart.png", sex = "boy", legend=c("50% percentile","Baby growth"))
+#BabyGrowth(x,y,name="Baby",unit="kg",dateformat="%B-%d",xtitle="Month",ytitle="Weight(kg)", filename="Growchart.pdf", sex = "boy", legend=c("50% percentile","Baby growth"))
     # x - Dates when the baby was measured, assuming that the first date is the date of birth
     # y - Measured value
     # name - name of the baby, used for the plot
@@ -35,7 +35,7 @@
 
 
 # This function was written to plot baby growth over time 
-BabyGrowth <- function(x, y, name="Baby", unit="kg", main="'s Growthchart",dateformat="%B-%d", xtitle="Month", ytitle="Weight (kg)", filename="Growchart.png", sex="boy", legend=c("50% percentile", "Baby growth", "Last measured: ")){
+BabyGrowth <- function(x, y, name="Baby", unit="kg", main="'s Growthchart",dateformat="%B-%d", xtitle="Month", ytitle="Weight (kg)", filename="Growchart.pdf", sex="boy", legend=c("50% percentile", "Baby growth", "Last measured: ")){
     
     # initializing sex dependent cdc data and color scheme
     cdc_df <- data.frame()
@@ -136,7 +136,7 @@ BabyGrowth <- function(x, y, name="Baby", unit="kg", main="'s Growthchart",datef
     ylime   <- c(2, y[length(y)]*1.1)
     
     # Initializing plot area:
-    png(filename, height=400, width=550)
+    pdf(filename, height=6, width=7.5)
     par(xpd=F)
     plot(y=-4, x=-13, col="red", xaxs='i', ylim=ylime, xlim=xlime, main=header, xlab=xtitle, ylab=ytitle)
     
